@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>glass</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+		section{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			background: #232323;
+			overflow: hidden;
+			padding: 10px 20px;
+			box-sizing: border-box;
+		}
+		section::before{
+			content: '';
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #22f;
+			clip-path: circle(60% at 100% -20%);
+		}
+		section::after{
+			content: '';
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #f62;
+			clip-path: circle(35% at 0% 100%);
+		}
+		.container{
+			position: relative;
+			z-index: 1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+		}
+		.container .card{
+			position: relative;
+			width: 300px;
+			height: 400px;
+			margin: 20px 40px;
+			background: rgba(255,255,255,0.05);
+			box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+			backdrop-filter: blur(15px);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			z-index: 0;
+		}
+		.container .card:hover{
+			z-index: 1;
+		}
+		.container .card .image{
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			padding: 50px;
+			transition: 0.5s ease-in-out;
+			z-index: 10;
+		}
+		.container .card:hover .image{
+			transform: translateY(-100px);
+		}
+		.container .card .image img{
+			position: relative;
+			min-width: 200%;
+		}
+		.container .card:hover .image img{
+			animation: animate 10s linear;
+			animation-delay: 0.5s;
+		}
+		.container .card .image h2{
+			color: #fff;
+			font-weight: 600;
+		}
+		.container .card .content{
+			position: absolute;
+			bottom: 20px;
+			z-index: 1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			transition: 0.5s ease-in-out;
+			opacity: 0;
+			visibility: hidden;
+		}
+		.container .card:hover .content{
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(-50px);
+		}
+		.container .card .content .size,
+		.container .card .content .color{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 8px 20px;
+		}
+		.container .card .content .size h3,
+		.container .card .content .color h3{
+			color: #fff;
+			font-weight: 300;
+			font-size: 14px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			margin-right: 10px;
+		}
+		.container .card .content .size span{
+			width: 26px;
+			height: 26px;
+			text-align: center;
+			line-height: 24px;
+			display: inline-block;
+			color: #111;
+			background: #fff;
+			border-radius: 4px;
+			font-size: 14px;
+			margin: 0 5px;
+			font-weight: 500;
+			transition: 0.5s;
+			cursor: pointer;
+		}
+		.container .card .content .size span:hover{
+			background: #f62;
+		}
+		.container .card:nth-child(2) .content .size span:hover{
+			background: #6f2;
+		}
+		.container .card:nth-child(3) .content .size span:hover{
+			background: #22f;
+		}
+		.container .card .content .color span{
+			width: 20px;
+			height: 20px;
+			background: #f00;
+			border-radius: 50%;
+			margin: 0 5px;
+			border: 2px solid #fff;
+			box-sizing: border-box;
+		}
+		.container .card .content .color span:nth-child(2){
+			background: #f62;
+		}
+		.container .card .content .color span:nth-child(3){
+			background: #6f2;
+		}
+		.container .card .content .color span:nth-child(4){
+			background: #22f;
+		}
+		.container .card .content a{
+			position: relative;
+			top: 10px;
+			display: inline-block;
+			padding: 12px 30px;
+			background: #fff;
+			border-radius: 40px;
+			font-weight: 600;
+			letter-spacing: 1px;
+			color: #111;
+			text-decoration: none;
+			text-transform: uppercase;
+		}
+		@keyframes animate{
+			0%{
+				transform: translate(0px,0px) rotate(0deg);
+			}
+			10%{
+				transform: translate(-150px,0px) rotate(0deg);	
+			}
+			20%{
+				transform: translate(-200px,50px) rotate(-90deg);	
+			}
+			30%{
+				transform: translate(-200px,200px) rotate(-90deg);	
+			}
+			40%{
+				transform: translate(-150px,250px) rotate(-180deg);
+			}
+			50%{
+				transform: translate(150px,250px) rotate(-180deg);
+			}
+			59%{
+				transform: translate(200px,200px) rotate(-270deg);
+			}
+			68%{
+				transform: translate(200px,50px) rotate(-270deg);
+			}
+			77%{
+				transform: translate(150px,0px) rotate(-360deg);
+			}
+			85%{
+				transform: translate(-20px,0px) rotate(-360deg);
+			}
+			86%{
+				transform: translate(-50px,0px) rotate(-360deg);
+			}
+			100%{
+				transform: translate(0px,0px) rotate(-360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="card">
+				<div class="image">
+					<img src="orange car left.gif">
+					<h2>Audi Cars</h2>
+				</div>
+				<div class="content">
+					<div class="size">
+						<h3>Model :</h3>
+							<span>7</span>
+							<span>8</span>
+							<span>9</span>
+							<span>10</span>
+					</div>
+					<div class="color">
+						<h3>Color :</h3>
+							<span></span>
+							<span></span>
+							<span></span>
+					</div>
+					<a href="#">Buy Now</a>					
+				</div>
+			</div>
+			<div class="card">
+				<div class="image">
+					<img src="green car left.gif">
+					<h2>Audi Cars</h2>
+				</div>
+				<div class="content">
+					<div class="size">
+						<h3>Model :</h3>
+							<span>7</span>
+							<span>8</span>
+							<span>9</span>
+							<span>10</span>
+					</div>
+					<div class="color">
+						<h3>Color :</h3>
+							<span></span>
+							<span></span>
+							<span></span>
+					</div>
+					<a href="#">Buy Now</a>					
+				</div>
+			</div>
+			<div class="card">
+				<div class="image">
+					<img src="blue car left.gif">
+					<h2>Audi Cars</h2>
+				</div>
+				<div class="content">
+					<div class="size">
+						<h3>Model :</h3>
+							<span>7</span>
+							<span>8</span>
+							<span>9</span>
+							<span>10</span>
+					</div>
+					<div class="color">
+						<h3>Color :</h3>
+							<span></span>
+							<span></span>
+							<span></span>
+					</div>
+					<a href="#">Buy Now</a>					
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+<script type="text/javascript">
+	var cards=document.query
+</script>
+</html>
