@@ -215,6 +215,45 @@
 				transform: translate(0px,0px) rotate(-360deg);
 			}
 		}
+		@media(max-width: 900px){
+			.container .card{
+				position: relative;
+				width: 450px;
+				height: 600px;
+				margin: 20px 40px;
+				background: rgba(255,255,255,0.05);
+				box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+				backdrop-filter: blur(20px);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				z-index: 0;
+			}
+			.container .card .image h2{
+				font-size: 40px;
+			}	
+			.container .card .content .size h3,
+			.container .card .content .color h3{
+				font-size: 20px;
+			}
+			.container .card .content .size span{
+				width: 30px;
+				height: 30px;
+				font-size: 18px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.container .card .content .color span{
+				width: 25px;
+				height: 25px;
+			}
+			.container .card .content{
+				position: absolute;
+				bottom: 45px;
+			}
+		}
 	</style>
 </head>
 <body>
