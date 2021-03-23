@@ -55,7 +55,7 @@
 			margin: 20px 40px;
 			background: rgba(255,255,255,0.05);
 			box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-			backdrop-filter: blur(15px);
+			backdrop-filter: blur(20px);
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -220,19 +220,9 @@
 			}
 		}
 		@media(min-width:360px) and (max-width: 980px){
-			.container .card{
-				position: relative;
+			.container .card{				
 				width: 450px;
-				height: 600px;
-				margin: 20px 40px;
-				background: rgba(255,255,255,0.05);
-				box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-				backdrop-filter: blur(20px);
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				flex-direction: column;
-				z-index: 0;
+				height: 600px;				
 			}
 			.container .card .image h2{
 				font-size: 40px;
@@ -250,9 +240,38 @@
 				width: 25px;
 				height: 25px;
 			}
-			.container .card .content{
-				position: absolute;
+			.container .card .content{				
 				bottom: 45px;
+			}
+		}
+		@media(min-width: 702px) and (max-width: 980px){
+			.container .card{				
+				width: 250px;
+				height: 300px;
+				margin: 20px;				
+			}
+			.container .card .image h2{
+				font-size: 20px;
+			}	
+			.container .card .content .size h3,
+			.container .card .content .color h3{
+				font-size: 14px;
+			}
+			.container .card .content .size span{
+				width: 20px;
+				height: 20px;
+				font-size: 14px;				
+			}
+			.container .card .content .color span{
+				width: 18px;
+				height: 18px;
+			}
+			.container .card .content{				
+				bottom: 0;
+			}
+			.container .card .content a{							
+				padding: 12px 20px;
+				font-size: 15px;
 			}
 		}
 	</style>
@@ -330,6 +349,6 @@
 	</section>
 </body>
 <script type="text/javascript">
-	alert(window.outerWidth);
+	alert(window.innerWidth);
 </script>
 </html>
