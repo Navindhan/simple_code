@@ -219,7 +219,7 @@
 				transform: translate(0px,0px) rotate(-360deg);
 			}
 		}
-		@media(min-width:360px){
+		@media(min-width:360px) and (max-width: 980px){
 			.container .card{				
 				width: 450px;
 				height: 600px;				
@@ -242,36 +242,6 @@
 			}
 			.container .card .content{				
 				bottom: 45px;
-			}
-		}
-		@media(min-width: 702px){
-			.container .card{				
-				width: 250px;
-				height: 300px;
-				margin: 20px;				
-			}
-			.container .card .image h2{
-				font-size: 20px;
-			}	
-			.container .card .content .size h3,
-			.container .card .content .color h3{
-				font-size: 14px;
-			}
-			.container .card .content .size span{
-				width: 20px;
-				height: 20px;
-				font-size: 14px;				
-			}
-			.container .card .content .color span{
-				width: 18px;
-				height: 18px;
-			}
-			.container .card .content{				
-				bottom: 0;
-			}
-			.container .card .content a{							
-				padding: 12px 20px;
-				font-size: 15px;
 			}
 		}
 	</style>
@@ -348,7 +318,4 @@
 		</div>
 	</section>
 </body>
-<script type="text/javascript">
-	alert(window.outerWidth);
-</script>
 </html>
